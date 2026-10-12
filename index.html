@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAHIDA Member Hisab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+    header {
+      background: #155e75;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+    }
+    main {
+      max-width: 800px;
+      margin: 25px auto;
+      padding: 0 12px;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      font-size: 16px;
+    }
+    button {
+      padding: 11px 16px;
+      margin-top: 10px;
+      background: #0e7490;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CHAHIDA Member Hisab</h1>
+    <p>সদস্যদের হিসাব ব্যবস্থাপনা</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>সদস্য খুঁজুন</h2>
+      <input id="search" placeholder="সদস্যের নাম লিখুন">
+      <p id="message">এখানে সদস্যের নাম লিখতে পারবেন।</p>
+      <button onclick="clearSearch()">নাম মুছুন</button>
+    </section>
+
+    <section>
+      <h2>হিসাব ব্যবস্থাপনা</h2>
+      <p>মাসিক চাঁদা, কিস্তি আদায়, অগ্রিম ও বকেয়ার হিসাব এখানে যুক্ত করা হবে।</p>
+      <p>পরবর্তী ধাপে Firebase-এর সঙ্গে সংযোগ করা হবে।</p>
+    </section>
+  </main>
+
+  <script>
+    const search = document.getElementById("search");
+    const message = document.getElementById("message");
+
+    search.addEventListener("input", function() {
+      message.textContent = search.value.trim()
+        ? "আপনি খুঁজছেন: " + search.value
+        : "এখানে সদস্যের নাম লিখতে পারবেন।";
+    });
+
+    function clearSearch() {
+      search.value = "";
+      message.textContent = "এখানে সদস্যের নাম লিখতে পারবেন।";
+    }
+  </script>
+</body>
+</html>
